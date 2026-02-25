@@ -1,10 +1,10 @@
-title: "Blog Title"
-author: "Blog Author"
-description: "My blog"
+title: "equipa_Ausente"
+author: "equipa_Ausente"
+description: "Aveiro, 2026"
 permalink: /:title/
-lang: "en"
+lang: "pt"
 excerpt_separator: "\n\n\n"
-date_format: "%B %d, %Y"
+date_format: "%d %B, %Y"
 
 # Layout
 
@@ -18,13 +18,13 @@ show_minimal: false             # remove all clutter
 # Menu                          # for available icons see https://fontawesome.com/v5/icons/
 
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
-  - {file: "archive.html", sidebaricon: home}
-  - {file: "README.md", sidebaricon: address-card}
+  - {file: "archive.html", title: "Menu", sidebaricon: home}
+  - {file: "README.md", title: "Sobre", sidebaricon: address-card}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
-  - {title: Mail, icon: envelope, url: "mailto:author@example.com"}
-  - {title: Github, icon: github, url: "https://github.com/niklasbuschmann/contrast"}
-  - {title: Subscribe, icon: rss, url: "/feed.xml"}
+  - {title: Mail, icon: envelope, url: "mailto:miguelsantosgomes8@ua.pt"}
+  - {title: Github, icon: github, url: "https://github.com/equipaausente"}
+  #- {title: Subscribe, icon: rss, url: "/feed.xml"}
 
 comments:
 #  disqus_shortname: ""         # see https://disqus.com

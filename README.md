@@ -1,12 +1,12 @@
 ---
-title: "About"
+title: "Sobre"
 permalink: "/about/"
 layout: page
 ---
 
-## Github Pages
+## O nosso website
 
-Just fork this [repository](https://github.com/niklasbuschmann/contrast) to `your_username.github.io` and adjust the `_config.yml` to use with [Github Pages](https://pages.github.com/) and your page is done.
+Olá malta, o website já está funcional, ainda só editei esta parte, o resto depois dá para editar e adicionar cenas, se não gostarem deste layout de site há outros que se podem ecolher em https://jekyllthemes.io/free
 
 ## Features
 

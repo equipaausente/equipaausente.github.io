@@ -17,6 +17,6 @@ O nosso objetivo passa por tentar modelar algo engraçado com componentes movív
 
 Olá, sou o Miguel. Membro da equipa_Ausente desde 2026. Estou nesta cadeira porque me interesso por desenho no geral e quero aprender a usar melhor as ferramentas de desenho e simulação essenciais para a engenharia.
 ## Nuno
-![Nuno](/assets/images/fotonuno.jpeg)
+![Nuno](/assets/images/nunofoto.png)
 ## Francisca
 

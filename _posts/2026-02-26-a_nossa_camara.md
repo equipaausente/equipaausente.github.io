@@ -12,3 +12,8 @@ Um facto engraçado é que tem inscrito Made in GDR, ou seja foi fabricada na Al
 Aqui fica também o primeiro esboço que fizemos das dimensões, enquanto esperávamos que a nossa câmara chegasse.
 
 ![Camara](/assets/images/image17-4.png)
+
+E o primeiro modelo baseado nessas dimensões.
+
+
+![primeiro](/assets/images/primeiro.png)

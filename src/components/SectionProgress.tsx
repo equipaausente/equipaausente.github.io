@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { sections as contentSections } from '../data/content';
 
 const buildSections = () => {
-  const dynamicSections = Object.entries(contentSections).map(([key, section]) => ({
+  const dynamicSections = Object.values(contentSections).map((section) => ({
     id: section.id,
     label: section.label,
   }));

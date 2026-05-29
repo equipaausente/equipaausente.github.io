@@ -549,7 +549,19 @@ export const sections = {
       {
         text: [
           'Com isto em mente, voltámos à abordagem por deslocamento, mas desta vez utilizando um corpo diferente, responsável por sofrer o deslocamento vertical e, através do contacto, transferir esse movimento para a pega do alicate. Esta solução tornou-se muito mais eficaz e controlada, porque o deslocamento não era imposto diretamente na peça deformável, mas sim transmitido por contacto, aproximando melhor a simulação de uma situação física real.',
+        ],
+        videos: [
+          { src: `${BASE}/simulacao/nuno/alicate-dinamico.mp4`, type: 'video/mp4', caption: 'Alicate — estudo não linear dinâmico' },
+        ],
+      },
+      {
+        text: [
           'Também foram realizados estudos dinâmicos e estáticos do alicate para comparar diferentes formas de aplicar cargas e deslocamentos. Estes testes permitiram perceber melhor a influência das fixações e confirmar que pequenas alterações nas condições de fronteira podem alterar bastante os resultados obtidos.',
+        ],
+        videos: [
+          { src: `${BASE}/simulacao/nuno/alicate-estatico-forca.mp4`, type: 'video/mp4', caption: 'Alicate — estudo estático com força' },
+          { src: `${BASE}/simulacao/nuno/alicate-estatico-deslocamento.mp4`, type: 'video/mp4', caption: 'Alicate — estudo estático com deslocamento' },
+          { src: `${BASE}/simulacao/nuno/alicate-estatico-forca-direta.mp4`, type: 'video/mp4', caption: 'Alicate — estudo estático com força direta' },
         ],
       },
       {
@@ -559,6 +571,14 @@ export const sections = {
           'Fizemos várias tentativas, mas os resultados ainda não estavam de acordo com o que esperávamos. Por isso, decidimos começar do zero, simplificando o modelo e tentando representar melhor a realidade.',
           'Com este novo modelo, mais realista e ao mesmo tempo mais simples, conseguimos obter uma simulação muito mais ilustrativa do funcionamento real da peça. No último teste, a parte exterior encontra-se fixa e funciona como base da simulação. Usámos novamente a técnica do corpo auxiliar com deslocamento, de forma a introduzir uma força na peça desejada através do contacto.',
           'Nesta versão, conseguimos ainda observar o contacto entre a peça que aperta a perna e a própria perna do tripé, bem como os esforços associados a essa interação. Este foi um avanço importante em relação ao estudo do alicate, onde ainda não tínhamos conseguido representar este tipo de contacto de forma tão clara.',
+        ],
+        videos: [
+          { src: `${BASE}/simulacao/nuno/gripper-fixo-em-eixo-pivot.mp4`, type: 'video/mp4', caption: 'Gripper — fixo no eixo pivot' },
+          { src: `${BASE}/simulacao/nuno/gripper-fixo-em-parede.mp4`, type: 'video/mp4', caption: 'Gripper — fixo em parede' },
+          { src: `${BASE}/simulacao/nuno/gripper-expacao-radial.mp4`, type: 'video/mp4', caption: 'Gripper — expansão radial' },
+          { src: `${BASE}/simulacao/nuno/gripper-v2-primeiro-teste.mp4`, type: 'video/mp4', caption: 'Gripper v2 — primeiro teste' },
+          { src: `${BASE}/simulacao/nuno/gripper-v2-segundo-teste.mp4`, type: 'video/mp4', caption: 'Gripper v2 — segundo teste' },
+          { src: `${BASE}/simulacao/nuno/gripper-v2-ultimo-teste.mp4`, type: 'video/mp4', caption: 'Gripper v2 — último teste' },
         ],
       },
       {

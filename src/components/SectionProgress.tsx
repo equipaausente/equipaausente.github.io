@@ -34,7 +34,9 @@ export default function SectionProgress() {
 
   const navigate = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: id === 'simulacao' ? 'auto' : 'smooth' });
+    }
   };
 
   return (

@@ -28,7 +28,9 @@ export default function Navigation() {
   const handleNav = (href: string) => {
     setMenuOpen(false);
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: href === '#simulacao' ? 'auto' : 'smooth' });
+    }
   };
 
   return (

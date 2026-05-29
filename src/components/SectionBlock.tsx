@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode } from 'react';
+import { useEffect, useRef, useState, ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 interface Props {
@@ -23,37 +23,49 @@ export default function SectionBlock({
   children,
 }: Props) {
   const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(!animate);
 
   useEffect(() => {
-    if (!animate) return;
+    if (!animate) {
+      setVisible(true);
+      return;
+    }
 
     const el = ref.current;
     if (!el) return;
 
+    const fallback = window.setTimeout(() => setVisible(true), 1200);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add('section-visible');
+          setVisible(true);
           observer.disconnect();
+          window.clearTimeout(fallback);
         }
       },
       { threshold: 0 }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [animate]);
 
   const handleNext = () => {
     if (!nextId) return;
     const el = document.getElementById(nextId);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: nextId === 'simulacao' ? 'auto' : 'smooth' });
+    }
   };
 
   return (
     <section
       id={id}
       ref={ref}
-      className={`${animate ? 'section-fade' : ''} py-24 md:py-32 border-t border-zinc-800/50`}
+      className={`${animate ? 'section-fade' : ''} ${visible ? 'section-visible' : ''} py-24 md:py-32 border-t border-zinc-800/50`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-start gap-8 mb-12">

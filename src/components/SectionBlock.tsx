@@ -8,13 +8,25 @@ interface Props {
   title: string;
   nextId?: string;
   nextLabel?: string;
+  animate?: boolean;
   children: ReactNode;
 }
 
-export default function SectionBlock({ id, index, label, title, nextId, nextLabel, children }: Props) {
+export default function SectionBlock({
+  id,
+  index,
+  label,
+  title,
+  nextId,
+  nextLabel,
+  animate = true,
+  children,
+}: Props) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (!animate) return;
+
     const el = ref.current;
     if (!el) return;
 
@@ -29,7 +41,7 @@ export default function SectionBlock({ id, index, label, title, nextId, nextLabe
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [animate]);
 
   const handleNext = () => {
     if (!nextId) return;
@@ -41,7 +53,7 @@ export default function SectionBlock({ id, index, label, title, nextId, nextLabe
     <section
       id={id}
       ref={ref}
-      className="section-fade py-24 md:py-32 border-t border-zinc-800/50"
+      className={`${animate ? 'section-fade' : ''} py-24 md:py-32 border-t border-zinc-800/50`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-start gap-8 mb-12">

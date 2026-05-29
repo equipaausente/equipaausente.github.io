@@ -14,6 +14,7 @@ export default function SimulationSection() {
       title={simulacao.title}
       nextId="sobre"
       nextLabel="A Equipa"
+      animate={false}
     >
       <div className="rounded-lg border border-amber-400/20 bg-amber-400/5 p-6 mb-10 flex gap-4">
         <Activity size={20} className="text-amber-400 flex-shrink-0 mt-0.5" />

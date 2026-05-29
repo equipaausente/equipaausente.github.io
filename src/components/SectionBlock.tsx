@@ -25,7 +25,7 @@ export default function SectionBlock({ id, index, label, title, nextId, nextLabe
           observer.disconnect();
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0 }
     );
     observer.observe(el);
     return () => observer.disconnect();

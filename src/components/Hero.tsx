@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="hero-animate inline-flex items-center gap-2 border border-zinc-700 rounded-full px-5 py-2 mb-10">
           <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
           <span className="font-mono text-zinc-400 text-xs tracking-[0.25em] uppercase">
-            Projeto de Engenharia Mecânica &mdash; 2024/25
+            Introdução à Engenharia Assistida Por Computador - 2025/2026
           </span>
         </div>
 

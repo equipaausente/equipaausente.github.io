@@ -615,7 +615,7 @@ export const sections = {
       },
       {
         name: 'Kika',
-        role: 'renderisação da maquina',
+        role: 'Renderização da Câmara',
         image: { src: `${BASE}/kikafoto.png`, alt: 'Kika' },
       },
     ],

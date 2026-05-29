@@ -13,6 +13,7 @@ interface VideoItem {
 }
 
 interface ContentBlockItem {
+  title?: string;
   text?: string[];
   images?: ImageItem[];
   videos?: VideoItem[];
@@ -27,6 +28,10 @@ export default function ContentBlocks({ blocks }: Props) {
     <div className="space-y-14">
       {blocks.map((block, blockIndex) => (
         <div key={blockIndex} className="space-y-6">
+          {block.title && (
+            <h3 className="text-xl font-bold text-white tracking-tight">{block.title}</h3>
+          )}
+
           {block.text && block.text.length > 0 && (
             <div className="space-y-5 max-w-3xl">
               {block.text.map((paragraph, textIndex) => (

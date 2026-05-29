@@ -505,6 +505,71 @@ export const sections = {
           'Comparando as tensões obtidas no tripé completo com as tensões analisadas peça a peça, verifica-se uma diferença muito significativa. Por exemplo, nas pernas, quando o tripé é analisado como um conjunto, as tensões obtidas são bastante inferiores. Conclui-se, assim, que a análise individual das partes constitui uma etapa fundamental no processo de análise de um objeto.',
         ],
       },
+      {
+        title: 'Simulação não linear',
+        text: [
+          'Ao mesmo tempo que estávamos a modelar o tripé de uma forma mais convencional, decidimos também estudar as peças responsáveis por fixar as pernas do tripé na altura desejada. Como este estudo envolvia movimento, contacto entre corpos e alguma deformação, percebemos que uma simulação linear não seria suficiente para representar corretamente o comportamento esperado.',
+          'Por isso, decidimos explorar a simulação não linear, começando por um objeto com o qual já estávamos mais familiarizados: um alicate sem partes móveis, que fecha apenas através da deformação de zonas específicas do próprio modelo. Com este plano em mente, começámos a explorar diferentes abordagens e a perceber quais os parâmetros que mais influenciavam os resultados.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/nuno/nonlinear-40n-inicial.png`, alt: 'Estudo não linear com 40 N - estado inicial', caption: 'Estudo não linear com 40 N — estado inicial' },
+          { src: `${BASE}/simulacao/nuno/nonlinear-40n-final.png`, alt: 'Estudo não linear com 40 N - estado final', caption: 'Estudo não linear com 40 N — estado final' },
+        ],
+      },
+      {
+        text: [
+          'Depois de fazermos um estudo linear apenas para comprovar que não era a abordagem mais adequada ao que pretendíamos analisar, tentámos começar pelo mais simples dentro das opções dos estudos não lineares. Dividimos o alicate em três partes diferentes, fixámos as zonas necessárias e introduzimos uma força de 40 N.',
+          'Inicialmente, foi estranho verificar que o alicate não fechava como esperávamos, mas esta acabou por ser uma boa primeira tentativa, porque nos permitiu perceber que a forma como as forças e as condições de fronteira são aplicadas tem uma influência muito grande no comportamento final da simulação.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/nuno/nonlinear-12mm-inicial.png`, alt: 'Estudo por deslocamento de 12 mm - estado inicial', caption: 'Deslocamento de 12 mm — estado inicial' },
+          { src: `${BASE}/simulacao/nuno/nonlinear-12mm-final.png`, alt: 'Estudo por deslocamento de 12 mm - estado final', caption: 'Deslocamento de 12 mm — estado final' },
+        ],
+      },
+      {
+        text: [
+          'Com isto, passámos para uma abordagem baseada em deslocamento em vez de força. Esta tentativa foi interessante, porque permitia controlar melhor o movimento imposto ao modelo, mas não se revelou viável desta forma. O principal problema foi o facto de o sentido do deslocamento não se atualizar ao longo do estudo, ao contrário do que acontece com uma força aplicada sobre uma superfície.',
+          'Como resultado, surgiram deformações pouco realistas, que não representavam corretamente o movimento natural de fecho do alicate.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/nuno/nonlinear-20n-inicial.png`, alt: 'Estudo não linear com 20 N - estado inicial', caption: 'Estudo não linear com 20 N — estado inicial' },
+          { src: `${BASE}/simulacao/nuno/nonlinear-20n-final.png`, alt: 'Estudo não linear com 20 N - estado final', caption: 'Estudo não linear com 20 N — estado final' },
+        ],
+      },
+      {
+        text: [
+          'Depois tentámos um estudo geral do alicate, fixando uma das pegas e introduzindo 20 N na outra, para observar a deformação e o comportamento do alicate como um todo. Neste caso, o modelo comportou-se de uma forma mais próxima do esperado.',
+          'No entanto, foi estranho verificar que o deslocamento da pega era pouco diferente do primeiro teste, apesar de esse primeiro ensaio estar sujeito ao dobro da força. Isto mostrou-nos a inconsistência desta abordagem quando usamos apenas forças aplicadas diretamente e também a superficialidade com que, nesta fase inicial, ainda estávamos a explorar as definições automáticas do SolidWorks.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/nuno/nonlinear-40mm-inicial.png`, alt: 'Estudo por deslocamento de 40 mm - estado inicial', caption: 'Deslocamento de 40 mm — estado inicial' },
+          { src: `${BASE}/simulacao/nuno/nonlinear-40mm-final.png`, alt: 'Estudo por deslocamento de 40 mm - estado final', caption: 'Deslocamento de 40 mm — estado final' },
+        ],
+      },
+      {
+        text: [
+          'Com isto em mente, voltámos à abordagem por deslocamento, mas desta vez utilizando um corpo diferente, responsável por sofrer o deslocamento vertical e, através do contacto, transferir esse movimento para a pega do alicate. Esta solução tornou-se muito mais eficaz e controlada, porque o deslocamento não era imposto diretamente na peça deformável, mas sim transmitido por contacto, aproximando melhor a simulação de uma situação física real.',
+          'Também foram realizados estudos dinâmicos e estáticos do alicate para comparar diferentes formas de aplicar cargas e deslocamentos. Estes testes permitiram perceber melhor a influência das fixações e confirmar que pequenas alterações nas condições de fronteira podem alterar bastante os resultados obtidos.',
+        ],
+      },
+      {
+        title: 'Aplicação ao gripper do tripé',
+        text: [
+          'Com tudo isto que aprendemos, tentámos então modelar a peça que fixa uma das pernas do tripé na altura desejada. Esta peça tinha um comportamento mais difícil de simular, porque envolve deformação, contacto e uma função mecânica muito específica: pressionar a perna do tripé de forma a impedir o seu movimento.',
+          'Fizemos várias tentativas, mas os resultados ainda não estavam de acordo com o que esperávamos. Por isso, decidimos começar do zero, simplificando o modelo e tentando representar melhor a realidade.',
+          'Com este novo modelo, mais realista e ao mesmo tempo mais simples, conseguimos obter uma simulação muito mais ilustrativa do funcionamento real da peça. No último teste, a parte exterior encontra-se fixa e funciona como base da simulação. Usámos novamente a técnica do corpo auxiliar com deslocamento, de forma a introduzir uma força na peça desejada através do contacto.',
+          'Nesta versão, conseguimos ainda observar o contacto entre a peça que aperta a perna e a própria perna do tripé, bem como os esforços associados a essa interação. Este foi um avanço importante em relação ao estudo do alicate, onde ainda não tínhamos conseguido representar este tipo de contacto de forma tão clara.',
+        ],
+      },
+      {
+        text: [
+          'Esta imagem serve apenas como exemplo do que pode acontecer quando as condições de fronteira e as forças são colocadas sem grande pensamento crítico. Resultados estranhos ou pouco realistas não significam necessariamente que a simulação esteja errada por completo, mas sim que é necessário rever a forma como o problema foi definido.',
+          'Esta foi uma das principais aprendizagens deste processo: não desistir quando os resultados não são os esperados, mas sim explorar mais, testar novas abordagens e perceber o que cada definição está realmente a fazer. No fundo, foi preciso persistência, algo que acabou por ser verdade em todos os elementos deste grupo.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/nuno/erro-condicoes-fronteira.png`, alt: 'Exemplo de erro nas condições de fronteira', caption: 'Exemplo de condições de fronteira mal definidas' },
+        ],
+      },
     ],
   },
 

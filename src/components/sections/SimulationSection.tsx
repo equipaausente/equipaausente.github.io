@@ -1,5 +1,4 @@
 import { Activity } from 'lucide-react';
-import ImageCard from '../ImageCard';
 import SectionBlock from '../SectionBlock';
 import { sections } from '../../data/content';
 
@@ -33,9 +32,9 @@ export default function SimulationSection() {
             )}
 
             {block.text && block.text.length > 0 && (
-              <div className="space-y-5 max-w-3xl">
+              <div className="space-y-5 max-w-3xl rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
                 {block.text.map((paragraph, textIndex) => (
-                  <p key={textIndex} className="text-zinc-400 leading-relaxed text-base">
+                  <p key={textIndex} className="text-zinc-300 leading-relaxed text-base">
                     {paragraph}
                   </p>
                 ))}
@@ -53,12 +52,27 @@ export default function SimulationSection() {
                 }`}
               >
                 {block.images.map((image) => (
-                  <ImageCard
+                  <a
                     key={image.src}
-                    src={image.src}
-                    alt={image.alt}
-                    caption={image.caption}
-                  />
+                    href={image.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 transition-colors hover:border-amber-400/30"
+                  >
+                    <div className="aspect-[4/3] bg-white p-3">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                      />
+                    </div>
+
+                    {image.caption && (
+                      <div className="border-t border-zinc-800 px-4 py-3">
+                        <p className="text-sm text-zinc-300">{image.caption}</p>
+                      </div>
+                    )}
+                  </a>
                 ))}
               </div>
             )}

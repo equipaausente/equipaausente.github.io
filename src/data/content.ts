@@ -310,9 +310,207 @@ export const sections = {
     ],
   },
 
+  simulacao: {
+    id: 'simulacao',
+    index: 10,
+    label: 'Simulação',
+    title: 'Simulação',
+    blocks: [
+      {
+        text: [
+          'No âmbito do módulo de simulação desta cadeira, e mantendo o tema da máquina fotográfica, decidimos usar um tripé como sujeito de testes. Este tripé foi obtido através do Grabcad, já que nesta fase o objetivo não era modelação, mas sim explorar as simulações existentes no SolidWorks.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/tripe-modelo.png`, alt: 'Tripé modelo', caption: 'Tripé modelo' },
+          { src: `${BASE}/simulacao/tripe-real.jpeg`, alt: 'Tripé real', caption: 'Tripé real' },
+        ],
+      },
+      {
+        text: [
+          'Começamos com simulações de pequenas peças do tripé.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/sim-1.png`, alt: 'Simulação inicial 1', caption: 'Simulação inicial 1' },
+          { src: `${BASE}/simulacao/sim-2.png`, alt: 'Simulação inicial 2', caption: 'Simulação inicial 2' },
+        ],
+      },
+      {
+        text: [
+          'De seguida, passamos a uma abordagem mais crítica e mais pensada, onde efetuamos cálculos baseados no peso que a câmara iria exercer no tripé. Usamos o valor de 5kg por ser o especificado pelo fabricante.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/contas-1.png`, alt: 'Cálculos de forças 1', caption: 'Cálculos de forças 1' },
+          { src: `${BASE}/simulacao/contas-2.png`, alt: 'Cálculos de forças 2', caption: 'Cálculos de forças 2' },
+          { src: `${BASE}/simulacao/contas-3.png`, alt: 'Cálculos de forças 3', caption: 'Cálculos de forças 3' },
+        ],
+      },
+      {
+        text: [
+          'E realizamos testes para ver como essas forças iriam afetar as peças que consideramos mais críticas.',
+        ],
+      },
+      {
+        title: 'Peça do meio',
+        text: [
+          'Antes de termos acesso ao tripé, pensamos que as forças se iriam fazer sentir nas paredes do meio, por se tocarem no modelo que tínhamos do GrabCad.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/meio-0.png`, alt: 'Peça do meio 0', caption: 'Peça do meio 0' },
+        ],
+      },
+      {
+        text: [
+          'Após vermos como funcionava num tripé real, concluímos que tínhamos de mudar a abordagem nesta peça, já que as forças apenas se iriam fazer sentir através de pinos inseridos nas "orelhas" da peça.',
+          'Criámos pinos e usamos fixamentos por simetria e num ponto da peça, para tentar simular aquilo que observámos no tripé real.',
+          'Nesta peça usamos para a compressão, tripé semi-fechado, a força calculada de 5,5 N. Para a tração, já que nesta posição, tripé totalmente aberto, as forças sentidas por esta peça vão depender de quanto atrito as pernas fazem com o chão, usámos 50 N, para também tentar perceber se esta peça aguentaria uma situação onde as pernas fossem deliberadamente puxadas.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/meio-1.png`, alt: 'Preparação da peça do meio', caption: 'Preparação da peça do meio' },
+        ],
+      },
+      {
+        title: 'Compressão',
+        images: [
+          { src: `${BASE}/simulacao/meio-2.png`, alt: 'Compressão 1', caption: 'Compressão 1' },
+          { src: `${BASE}/simulacao/meio-3.png`, alt: 'Compressão 2', caption: 'Compressão 2' },
+        ],
+      },
+      {
+        title: 'Tração',
+        images: [
+          { src: `${BASE}/simulacao/meio-4.png`, alt: 'Tração 1', caption: 'Tração 1' },
+          { src: `${BASE}/simulacao/meio-5.png`, alt: 'Tração 2', caption: 'Tração 2' },
+        ],
+      },
+      {
+        text: [
+          'No entanto, esta forma de fixar a peça causava algum deslocamento vertical, que, nomeadamente nos testes de tração, não nos deixou satisfeitos. Assim adicionamos um apoio móvel ao topo do pino para tentar simular que o pino não se movia verticalmente. Aqui podemos ver que o deslocamento passa a ser horizontal, o que mostra melhor a realidade',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/meio-6.png`, alt: 'Apoio móvel 1', caption: 'Apoio móvel 1' },
+          { src: `${BASE}/simulacao/meio-7.png`, alt: 'Apoio móvel 2', caption: 'Apoio móvel 2' },
+        ],
+      },
+      {
+        title: 'Perna',
+        text: [
+          'Para iniciar as simulações por partes, começou-se por aplicar a força no topo da perna, em 6061 Alloy, utilizando um Fixed Geometry na parte inferior e uma mesh com tamanho máximo de 10 mm e mínimo de 8 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/perna-1.jpg`, alt: 'Perna 1', caption: 'Perna 1' },
+        ],
+      },
+      {
+        text: [
+          'Através da simulação, obteve-se uma tensão máxima de (3.365 \\times 10^4) Pa, sendo que a tensão de cedência do material é (5.515 \\times 10^7)Pa.',
+          'Para a segunda simulação foi utilizado o mesmo procedimento, mas com uma mesh de metade do tamanho da anterior, ou seja, 5 mm de máximo e 4 mm de mínimo.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/perna-2.jpg`, alt: 'Perna 2', caption: 'Perna 2' },
+        ],
+      },
+      {
+        text: [
+          'Nesta simulação obteve-se uma tensão de (3.713 \\times 10^4), o que representa um aumento de 10,3%.',
+          'O processo foi novamente repetido, reduzindo para metade a mesh anteriormente utilizada.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/perna-3.jpg`, alt: 'Perna 3', caption: 'Perna 3' },
+        ],
+      },
+      {
+        text: [
+          'Esta simulação apresentou uma tensão de (4.722 \\times 10^4) Pa, correspondente a um aumento de 27,2%.',
+          'Como se verificou um aumento contínuo da tensão sem convergência, concluiu-se que existia uma singularidade numérica. Para resolver esta situação, foi aplicado um tipo de apoio diferente, uma vez que o Fixed Geometry estava a concentrar todas as as tensões na zona de contacto com o chão. O apoio aplicado foi o On Cylindrical Faces, impedindo a rotação sobre si na parte cilíndrica da perna, e o Roller na zona de contacto com o chão.',
+          'O processo foi então repetido, começando novamente com a mesh de 10 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/perna-4.jpg`, alt: 'Perna 4', caption: 'Perna 4' },
+        ],
+      },
+      {
+        text: [
+          'Obteve-se uma tensão de (3.269 \\times 10^4) Pa.',
+          'Novamente, foi utilizada uma mesh de 5 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/perna-5.jpg`, alt: 'Perna 5', caption: 'Perna 5' },
+        ],
+      },
+      {
+        text: [
+          'Obteve-se uma tensão de (3.294 \\times 10^4) Pa, correspondente a um aumento de 0,8%.',
+          'De seguida, foi utilizada uma mesh de 2,5 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/perna-6.jpg`, alt: 'Perna 6', caption: 'Perna 6' },
+        ],
+      },
+      {
+        text: [
+          'Obteve-se uma tensão de (3.316 \\times 10^4) Pa, correspondente a um aumento de 0,7%.',
+          'Por fim, foi utilizada uma mesh de 1,25 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/perna-7.jpg`, alt: 'Perna 7', caption: 'Perna 7' },
+        ],
+      },
+      {
+        text: [
+          'Obteve-se uma tensão de (3.335 \\times 10^4) Pa, correspondente a um aumento de 0,6%.',
+          'Concluiu-se, assim, que a utilização destes dois últimos tipos de fixações constitui um método mais eficaz e mais realista, visto que a perna de um tripé não se encontra rigidamente fixa.',
+        ],
+      },
+      {
+        title: 'Simulação geral',
+        text: [
+          'Inicialmente foi realizada uma simulação geral apenas para obter uma perceção preliminar do comportamento da estrutura. Durante essa análise foi identificada uma singularidade numérica numa das peças. Na última tentativa já foi aplicado o apoio Roller e, devido ao facto de os pés não estarem paralelos, não foi necessária qualquer fixação adicional.',
+          'Começou-se com uma malha de 10 mm máximo e 8 mm mínimo.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/tripe-1.jpg`, alt: 'Tripé 1', caption: 'Tripé 1' },
+        ],
+      },
+      {
+        text: [
+          'A tensão máxima foi de (9.585 \\times 10^5) Pa.',
+          'Foi então realizada outra simulação com malha de 5 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/tripe-2.jpg`, alt: 'Tripé 2', caption: 'Tripé 2' },
+        ],
+      },
+      {
+        text: [
+          'A tensão máxima foi de (1.436 \\times 10^6) Pa, correspondente a um aumento de 49,8%.',
+          'De seguida, foi utilizada uma malha de 2,5 mm. A partir desta malha foi aplicado um control mesh na zona crítica, de forma a reduzir o esforço computacional mantendo a fidelidade da simulação. No restante tripé foi mantida a malha de 5 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/tripe-3.jpg`, alt: 'Tripé 3', caption: 'Tripé 3' },
+        ],
+      },
+      {
+        text: [
+          'A tensão máxima foi de (2.008 \\times 10^6) Pa, correspondente a um aumento de 39,8%.',
+          'Posteriormente, foi utilizada uma control mesh de 1,25 mm.',
+        ],
+        images: [
+          { src: `${BASE}/simulacao/tripe-4.jpg`, alt: 'Tripé 4', caption: 'Tripé 4' },
+        ],
+      },
+      {
+        text: [
+          'Obteve-se uma tensão máxima de (2.027 \\times 10^6) Pa, correspondente a um aumento de 0,9%.',
+          'Concluiu-se, assim, que a simulação convergiu, permitindo considerar este valor como fiável.',
+          'Comparando as tensões obtidas no tripé completo com as tensões analisadas peça a peça, verifica-se uma diferença muito significativa. Por exemplo, nas pernas, quando o tripé é analisado como um conjunto, as tensões obtidas são bastante inferiores. Conclui-se, assim, que a análise individual das partes constitui uma etapa fundamental no processo de análise de um objeto.',
+        ],
+      },
+    ],
+  },
+
   sobre: {
     id: 'sobre',
-    index: 10,
+    index: 11,
     label: 'A Equipa',
     title: 'A Equipa',
     text: [

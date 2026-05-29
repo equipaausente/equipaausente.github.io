@@ -11,6 +11,7 @@ const navItems = [
   { label: 'Mala', href: '#mala' },
   { label: 'Renderização', href: '#renderizacao' },
   { label: 'Animação', href: '#animacao' },
+  { label: 'Simulação', href: '#simulacao' },
   { label: 'Sobre', href: '#sobre' },
 ];
 
@@ -44,12 +45,12 @@ export default function Navigation() {
           equipa_<span className="text-white">Ausente</span>
         </button>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-5">
           {navItems.map((item) => (
             <button
               key={item.href}
               onClick={() => handleNav(item.href)}
-              className="text-sm text-zinc-400 hover:text-amber-400 transition-colors tracking-wide font-medium"
+              className="text-xs lg:text-sm text-zinc-400 hover:text-amber-400 transition-colors tracking-wide font-medium"
             >
               {item.label}
             </button>

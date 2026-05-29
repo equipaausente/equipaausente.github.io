@@ -10,6 +10,7 @@ import DrawingsSection from './components/sections/DrawingsSection';
 import MalaSection from './components/sections/MalaSection';
 import RenderizacaoSection from './components/sections/RenderizacaoSection';
 import AnimacaoSection from './components/sections/AnimacaoSection';
+import SimulationSection from './components/sections/SimulationSection';
 import TeamSection from './components/sections/TeamSection';
 import Footer from './components/Footer';
 
@@ -29,6 +30,7 @@ export default function App() {
         <MalaSection />
         <RenderizacaoSection />
         <AnimacaoSection />
+        <SimulationSection />
         <TeamSection />
       </main>
       <Footer />
